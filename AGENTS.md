@@ -2,10 +2,18 @@
 
 开源仓（public）：沟通前备谈 skill「想清楚」。方法论源自黄执中《表达学院》公开课的工程化，配合 Rokid AI Glasses「听懂对方」智能体使用。
 
-## 开源面红线（硬规则）
+## Scope
 
-- 本仓是公开仓：禁止出现任何私有信息、内部路径、个人数据、其他私有仓名或链接。
-- 提及「听懂对方」只能指向 Rokid Agent Store 发布面，不放私有仓库地址。
+- 本仓交付物 = `skill/`（Agent Skills 格式的备谈工作流）+ 结构校验脚本 + 文档四件套；单一产品面：沟通前的准备工序。
+- 目标用户：面对重要沟通（汇报/谈判/1on1/提需求/面试）的人，自带任意支持 Agent Skills 的 AI agent。
+- 生态位：三层闭环的「想清楚」层（沟通前）；沟通中归助谈设备，沟通后归用户自己的复盘，均不在本仓范围。
+
+## What NOT to do
+
+- 不在 README/rfc/SKILL 里宣称任何未在设备端代码验证过的联动机制（2026-11-22 review 教训：曾写「口播开场白可锚定听懂对方」，实际该智能体为单轮会话制）。
+- 不引入账号/云同步/多端状态。
+- 不生成让人背诵的话术模板；工作流任何改版不得把「筛除法找核心句」换成「直接挑最重要的」。
+- 不出现任何私有信息、内部路径、个人数据、其他私有仓名或链接；提及「听懂对方」只指向 Rokid Agent Store 发布面。
 - 方法论致谢保持中性：非官方、无隶属关系。
 
 ## Structure Routing
@@ -43,6 +51,6 @@
 ## Validation
 
 ```bash
-./scripts/check_card.sh          # 全部示例卡 + 模板结构校验
-python3 scripts/check_card.py skill/examples/向上汇报.md   # 单卡
+./scripts/check_card.sh          # 无参数：全部示例卡 + 模板结构校验
+./scripts/check_card.sh skill/examples/向上汇报_功能延期通报.md   # 指定卡片（透传）
 ```
